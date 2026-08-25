@@ -11,8 +11,8 @@
 class Solution {
 public:
     void reorderList(ListNode* head) {
-        if (head == NULL || head->next == NULL) return;
-        // Find middle
+        if(head == NULL && head->next != NULL) return;
+        // Finding Middle
         ListNode* slow = head;
         ListNode* fast = head;
 
@@ -36,7 +36,7 @@ public:
             curr = next;
         }
 
-        // Merge Two halves
+        // Merge 
         ListNode* p1 = head;
         ListNode* p2 = prev;
 
