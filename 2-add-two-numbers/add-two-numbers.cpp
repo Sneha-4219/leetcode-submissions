@@ -20,7 +20,6 @@ public:
             int val2 = (l2 == NULL) ? 0 : l2->val;
 
             int sum = val1 + val2 + carry;
-
             int digit = sum % 10;
             carry = sum / 10;
 
