@@ -21,6 +21,5 @@ public:
             head2->next = mergeTwoLists(head1, head2->next);
             return head2;
         }
-        return head1;
     }
 };
