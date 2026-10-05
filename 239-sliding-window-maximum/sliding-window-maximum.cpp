@@ -12,16 +12,14 @@ public:
             dq.push_back(i);
         }
 
-        // For next windows
+        // next windows
         for(int i = k; i < nums.size(); i++) {
             res.push_back(nums[dq.front()]);
 
-            // Removing elements from dq which are not part of current window
             while(dq.size() > 0 && dq.front() <= i - k) {
                 dq.pop_front();
             }
 
-            // Remove the smaller values
             while(dq.size() > 0 && nums[dq.back()] <= nums[i]) {
                 dq.pop_back();
             }
