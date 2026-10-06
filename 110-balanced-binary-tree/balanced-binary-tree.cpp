@@ -17,21 +17,19 @@ public:
         }
 
         int leftHt = height(root->left);
+        if(leftHt == -1) return -1;
+
         int rightHt = height(root->right);
+        if(rightHt == -1) return -1;
+
+        if(abs(leftHt - rightHt) > 1) {
+            return -1;
+        }
 
         return max(leftHt, rightHt) + 1;
     }
     bool isBalanced(TreeNode* root) {
-        if(root == NULL) {
-            return true;
-        }
-        int leftSub = height(root->left);
-        int rightSub = height(root->right);
 
-        if(abs(leftSub - rightSub) > 1) {
-            return false;
-        }
-
-        return isBalanced(root->left) && isBalanced(root->right);
+        return height(root) != -1;
     }
 };
