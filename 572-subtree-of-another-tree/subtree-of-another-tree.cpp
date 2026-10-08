@@ -16,12 +16,11 @@ public:
             return p == q;
         }
 
-        bool isLeftSame = isIdentical(p->left, q->left);
-        bool isRightSame = isIdentical(p->right, q->right);
+        int leftSame = isIdentical(p->left, q->left);
+        int rightSame = isIdentical(p->right, q->right);
 
-        return isLeftSame && isRightSame && p->val == q->val;
+        return leftSame && rightSame && p->val == q->val;
     }
-
     bool isSubtree(TreeNode* root, TreeNode* subRoot) {
         if(root == NULL || subRoot == NULL) {
             return root == subRoot;
