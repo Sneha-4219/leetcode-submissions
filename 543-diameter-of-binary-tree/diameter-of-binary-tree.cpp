@@ -17,10 +17,10 @@ public:
             return 0;
         }
 
-        int leftH = height(root->left);
-        int rightH = height(root->right);
-        ans = max(leftH + rightH, ans);
-        return max(leftH, rightH) + 1;
+        int leftHt = height(root->left);
+        int rightHt = height(root->right);
+        ans = max(leftHt + rightHt, ans);
+        return max(leftHt, rightHt) + 1;
     }
     int diameterOfBinaryTree(TreeNode* root) {
         height(root);
