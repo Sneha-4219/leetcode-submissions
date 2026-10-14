@@ -1,4 +1,3 @@
-```html
 <h2>Top View of Binary Tree</h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given a binary tree, and your task is to return its top view. The top view of a binary tree is the set of nodes visible when the tree is viewed from the top.</p>
 
 <ul>
@@ -40,4 +39,3 @@ Only the topmost node at each horizontal position is included in the top view.
 <ul>
 	<li>1 &le; size of binary tree, node.data &le; 10<sup>5</sup></li>
 </ul>
-```
