@@ -16,10 +16,7 @@ public:
             return p == q;
         }
 
-        int leftSame = isIdentical(p->left, q->left);
-        int rightSame = isIdentical(p->right, q->right);
-
-        return leftSame && rightSame && p->val == q->val;
+        return ((isIdentical(p->left, q->left) && isIdentical(p->right, q->right)) && p->val == q->val);
     }
     bool isSubtree(TreeNode* root, TreeNode* subRoot) {
         if(root == NULL || subRoot == NULL) {
