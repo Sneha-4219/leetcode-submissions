@@ -22,9 +22,9 @@ public:
         int rightHt = height(root->right);
         if(rightHt == -1) return -1;
 
-        if(abs(leftHt - rightHt) > 1) {
+        if((abs(leftHt - rightHt)) > 1) {
             return -1;
-        }
+        } 
 
         return max(leftHt, rightHt) + 1;
     }
