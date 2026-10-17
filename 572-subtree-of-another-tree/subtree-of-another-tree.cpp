@@ -27,6 +27,6 @@ public:
             return true;
         }
 
-        return isSubtree(root->left, subRoot) || isSubtree(root->right, subRoot);
+        return (isSubtree(root->left, subRoot)) || (isSubtree(root->right, subRoot));
     }
 };
