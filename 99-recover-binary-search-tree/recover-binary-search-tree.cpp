@@ -11,29 +11,49 @@
  */
 class Solution {
 public:
-    TreeNode* prev = NULL;
-    TreeNode* first = NULL;
-    TreeNode* second = NULL;
-    void inorder(TreeNode* root) {
-        if(root == NULL) {
-            return;
-        }
-
-        inorder(root->left);
-        if(prev != NULL && root->val < prev->val) {
-            if(!first) {
-                first = prev;
-            }
-            second = root;
-        }
-        prev = root;
-        inorder(root->right);
-    }
     void recoverTree(TreeNode* root) {
-        inorder(root);
+        TreeNode* first = NULL;
+        TreeNode* second = NULL;
+        TreeNode* prev = NULL;
 
-        int temp = first->val;
-        first->val = second->val;
-        second->val = temp;
+        while(root != NULL) {
+            if(root->left == NULL) {
+                if(prev != NULL && prev->val > root->val) {
+                    if(first == NULL) {
+                        first = prev;
+                    }
+                    second = root;
+                }
+                prev = root;
+                root = root->right;
+            } else {
+                // Find prev (IP)
+                TreeNode* IP = root->left;
+                while(IP->right != NULL && IP->right != root) {
+                    IP = IP->right;
+                }
+
+                if(IP->right == NULL) {
+                    IP->right = root;
+                    root = root->left;
+                } else {
+                    if(prev != NULL && prev->val > root->val) {
+                        if(first == NULL) {
+                            first = prev;
+                        }
+                        second = root;
+                    }
+                    prev = root;
+                    IP->right = NULL;
+                    root = root->right;
+                }
+            }
+        }
+
+        if(first != NULL && second != NULL) {
+            int temp = first->val;
+            first->val = second->val;
+            second->val = temp;
+        }
     }
 };
