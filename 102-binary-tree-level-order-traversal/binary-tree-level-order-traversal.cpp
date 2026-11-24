@@ -31,10 +31,12 @@ public:
                 if(curr->left != NULL) {
                     q.push(curr->left);
                 }
+
                 if(curr->right != NULL) {
                     q.push(curr->right);
                 }
             }
+
             ans.push_back({level});
         }
         return ans;
